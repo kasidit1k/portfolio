@@ -26,36 +26,25 @@ const linkAction = () =>{
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
 
-/*------------------------------------ คำสั่ง email --------------------------------*/
-const contactForm = document.getElementById('contact-form'),
-      contactName = document.getElementById('contact-name'),  
-      contactEmail = document.getElementById('contact-email'),  
-      contactProject = document.getElementById('contact-project'),  
-      contactMessage = document.getElementById('contact-message')
-    
-const sendEmail = (e) => {
-    e.preventDefault()
 
-    /*-----------------------------------ตัวฟิล field----------------------------------------*/
-    if(contactName.value == '' || contactEmail.value === '' || contactProject.value === ''){
-        //-------------------- เพิ่มลบสี --------------------------//
-        contactMessage.classList.remove('color-biue')
-        contactMessage.classList.add('color-red')
 
-        /*--------------------------------โชว์ข้อความ----------------------------*/    
-        contactMessage.textContent = 'Please enter the text'
-    }else{
-        //
-        emailjs.sendForm('service_n6nu15c','template_teszev7','contact-form','0SQXodYZ_COyn4ljD')
-            then(() =>{
-                contactMessage.classList.add('color-blue')
-                contactMessage.textContent = 'Message sent'
+/*------------------------- เลื่อนส่วนลิงก์ -------------------------*/
+const sections = document.querySelectorAll('section[id]')
 
-                setTimeout(() =>{
-                    contactMessage.textContent = ''
-                }, 5000)
-            })
-    }
+const querySelectorAll = () =>{
+    const scrollY = window.pageYOffset
+
+    sections.forEach(current =>{
+        const sectionHeight = current.offsetHeight,
+        sectionTop = current.offsetTop - 58,
+        sectionId = current.getAttribute('id'),
+        sectionClass = document.querySelector('.nav-menu a[href*=' + sectionId + ']')
+
+        if(scrollY > sectionTop && scrollY<= sectionTop + sectionHeight){
+            sectionClass.classList.add('active-link')
+        }else{
+            sectionClass.classList.remove('active-link')
+        }
+    })
 }
-
-contactForm.addEventListener('submit', sendEmail)
+window.addEventListener('scroll', scrollActive)

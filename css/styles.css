@@ -13,6 +13,8 @@
 --text-color-light: hsl(207, 4%, 56%);
 --body-color: hsl(207, 4%, 99%);
 --container-color: hsl(205, 4%, 95%);
+--black-color: hsl(0, 0%, 0%);
+--white-color: varhsl(166, 100%, 100%)
 
 
 
@@ -222,6 +224,10 @@ img{
 }
 
  /* ---------------------------------หน้า home -----------------------------------------*/
+
+ .active-link {
+      color: var(--title-color);
+ }
 
 
 .home-container {
@@ -433,135 +439,159 @@ img{
 
 
 /*-------------------------------------------------------หน้า contact ------------------------------------------*/
+.container{
+      padding-bottom: 0;
+}
+
 .contact-container{
-      row-gap: 3.5rem;
-}
-
-.contact-title{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      column-gap: .5rem;
-      font-size: var(--small-font-size);
-      font-weight: var(--font-semi-bold);
-      margin-bottom: 2.5rem;
-}
-
-.contact-title i{
-      font-size: 1rem;
-      font-weight: initial;
-}
-
-.contact-info,
-.contact-data,
-.contact-form{
-      display: grid;
-}
-
-.contact-info{
-      row-gap: 2rem;
+      position: relative;
+      grid-template-rows: 300px max-content max-content;
+      row-gap: 0;
 }
 
 .contact-data{
-      row-gap: .75rem;
+      position: relative;
+      width: 300px;
+      height: 300px;
+      background-color: var(--container-color);
+      padding: 3rem 1.5rem;
+      margin-left: auto;
+      border-bottom: 4px solid var(--first-color);
+      z-index: 5;
+      transition: background-color .4s;
 }
 
-.contact-data-title {
-      font-size: var(--small-font-size);
-      color: var(--text-color-light);
+.contact-data .section-title-2{
+      margin: 0 0 1.5rem;
+      transform: translateX(-3rem);
 }
 
-.contact-data-info {
-      font-size: var(--small-font-size);
-      font-family: var(--title-font);
+.contact-description-1{
       color: var(--title-color);
+      font-weight: var(--font-medium);
+      margin-bottom: 2rem;
 }
 
-.contact-button{
-      width: max-content;
-      display: inline-flex;
-      align-items: center;
-      column-gap: .5rem;
+.contact-description-2{
       color: var(--title-color);
       font-size: var(--smaller-font-size);
 }
-
-.contact-button i{
-      font-size: 1rem;
-      transition: transform .3s;
+ 
+.contact-data .geometric-box{
+      top: 2rem;
+      right: 2.5rem;
 }
 
-.contact-button:hover i {
-      transform: translateX(.25rem);
-}
-
-.contact-form {
+.contact-mail{
       position: relative;
-      row-gap: 2rem;
+      background-color: var(--black-color);
+      padding: 5rem 1.5rem 2.5rem;
+      margin-top: -2.5rem;
+      transition: background-color .4s;
 }
 
-.contact-form-div {
+.contact-title{
+      color: white;
+      font-size: var(--h3-font-size);
+      margin-bottom: 2rem;
+      text-align: center;
+}
+
+.contact-form,
+.contact-group{              /* conatact-from grid */
+      display: grid;
+      row-gap: 1.25rem;
+}
+
+.contact-form{
+      position: relative; 
+}
+
+.contact-box{
       position: relative;
-      height: 4rem;
+      width: 100%;
+      height: 58px;
 }
 
-.contact-form-input{
+.contact-input,
+.contact-button{
+      font-family: Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif;
+      font-size: var(--normal-font-size);
+      outline: none;
+      border: none;
+}
+
+.contact-input{
       position: absolute;
-      top: 0;
-      left: 0;
       width: 100%;
       height: 100%;
-      border: 2px solid var(--text-color-light);
-      border-radius: 2rem;
-      padding: 1.5rem;
-      font-size: var(--normal-font-size);
-      font-family: var(--title-font);
-      background: none;
-      outline: none;
-      z-index: 1;
-}
-
-.contact-form-tag {
-      position: absolute;
-      top: -.75rem;
-      left: 1.25rem;
-      z-index: 10;
-      background-color: var(--body-color);
-      color: var(--title-color);
-      font-size: var(--smaller-font-size);
+      background-color: var(--black-color);
+      border: 3px solid rgb(103, 49, 71);
+      color: white;
+      padding: .5rem 1rem;
       font-weight: var(--font-medium);
-      padding: .35rem;
+      transition: border .4s, background-color .4s;
 }
 
-.contact-form-area {
+.contact-input::placeholder{
+      color: var(--text-color-light);
+      transition: opacity .4s;
+}
+
+.contact-input:focus{
+      border: 3px solid var(--while-color);
+}
+
+.contact-input:-webkit-autofill{
+      transition: background-color 6000s, color 6000s;
+}
+
+.contact-label{
+      position: absolute;
+      top: 8px;
+      left: 10px;
+      color: var(--text-color-light);
+      font-size: var(--small-font-size);
+      font-weight: var(--font-medium);
+      background-color: var(--black-color);
+      padding: 8px;
+      pointer-events: none;
+      transition: top .4s opacity .4s, background-color .4s;
+      opacity: 0;
+}
+
+.contact-form .contact-area{
       height: 10rem;
 }
 
-.contact-form-area textarea{
+.contact-area textarea{
       resize: none;
+      padding-top: 1rem;
 }
 
-.contact-form .contact-button{
-      border: none;
-      background: none;
-      font-size: var(--h2-font-size);
-      font-family: var(--title-font);
-      font-weight: var(--font-semi-bold);
+.contact-button{
+      background-color: var(--first-color);
       cursor: pointer;
-      outline: none;
-      margin-top: .75rem;
+      height: 3rem;
+      font-family: Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif;
 }
 
-.contact-form .contact-button i{
-      font-size: 1.5rem;
-      font-weight: initial;
+.contact-input:focus::placeholder{
+      opacity: 0;
+}
+
+.contact-input:focus + .contact-label,
+.contact-input:not(:placeholder-shown).contact-input:not(:focus) + .contact-label{
+      opacity: 1;
+      top: -16px;
 }
 
 .contact-message{
+      font-style: white;
       font-size: var(--small-font-size);
       position: absolute;
-      bottom: 2.8rem;
-      left: 1.5rem;
+      bottom: -1.6rem;
+      left: 0;
 }
 /*------------------------------------สถานะ-------------------------------------*/
 .color-red {
@@ -571,3 +601,64 @@ img{
 .color-blue {
       color: hsl(207, 56%, 45%);
 }
+
+
+/*------------------------------------- ส่วนท้าย web --------------------------------*/
+
+.footer-container {
+      padding: 3rem 0 7rem;
+      text-align: center;
+}
+
+.footer.title {
+      font-size: var(--h1-font-size);
+      font-weight: var(--font-semi-bold);
+      margin-bottom: 1rem;
+}
+
+.footer-list,
+.footer-social{
+      display: flex;
+      justify-content: center;
+}
+
+.footer-list{
+      margin: 2.5rem 0;
+      column-gap: 2.5rem;
+}
+
+.footer-link{
+      color: var(--title-color);
+}
+
+.footer-link:hover {
+      text-decoration: underline;
+}
+
+.footer-social{
+      column-gap: 1.25rem;
+}
+
+.footer-social-link{
+      font-size: 1.25rem;
+      color: var(--title-color);
+      transition: transgotm .3s;
+}
+
+.footer-social-link:hover{
+      transform: translateY(-.15rem);
+}
+
+
+/*-------------------------------------- แถบเลื่อน -------------------------------*/
+
+::-webkit-scrollbar {
+      width: .6rem;
+      border-radius: .5rem;
+      background-color: hsl(207, 4%, 75%);
+}
+
+::-webkit-scrollbar{
+      background-color: hsl(207, 4%, 55%);
+}
+

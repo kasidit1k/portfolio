@@ -4,9 +4,13 @@
 <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Website Kasidit : </title>
+      <title>Web Aline :</title>
 
-      <link rel="stylesheet" href="css/styles.css">
+      <link rel="stylesheet" href="../dist/output.css">
+
+      <link rel="stylesheet" href="/src/css/style.css">
+
+      <!-- <link rel="stylesheet" href="../src/css/styles.css"> -->
       <!--loko Icon-->
       <link rel="shortcut icon" href="img/9arm-3.gif" type="image/x-icon">
 
@@ -14,14 +18,14 @@
       <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="bg-blue-300">
 
       <!-----------------------------------------------  ส่วนหัว ----------------------------------------------------->
 
       <header class="header" id="header">
             <nav class="nav container">
-                  <a href="#" class="nav-logo">
-                        KASIDIT
+                  <a href="#" class="font-sans font-bold text-green-700">
+                        AREA51
                   </a>
 
                   <div class="nav-menu" id="nav-menu">
@@ -89,37 +93,47 @@
             <section class="home section" id="home">
                   <div class="home-container container grid section-border">
                         <div class="home-data grid"></div>
-                        <h1 class="home-title">
+                        <h1 class="text-center text-2xl mb-[.5rem] font-sans font-bold">
                               Alien
                         </h1>
                         <div class="home-blob grid">
-                              <div class="home-profil">
+                              <div class="w-44 h-64 bg-white-700 rounded-[5.5rem] flex overflow-hidden justify-center">
                                     <img src="img/profilehome.png" alt="profil" class="home-perfil">
                               </div>
 
-                              <!--------------------------------- ส่วนตกแต่ง ---------------------------------------->
-                              <img src="img/shape-wawes.svg" alt="" class="home-shape-wawes">
-                              <img src="img/1610637227logo-concept-shape-art.png" alt="" class="home-shape-circle">
+                              <!--------------------------------- ตกแต่งโปรไฟล์ ---------------------------------------->
+
+                              <img src="img/html-1.svg"
+                                    class="absolute opacity w-12 -left-6 top-16 transform rotate-15">
+
+                              <!-- class="home-shape-wawes" -->
+                              <img src="img/shape-javascript-svgrepo-com.svg "
+                                    class="absolute opacity w-28 -bottom-3 -right-16 transform rotate-15 z-[-1]">
+
+                              <img src="img/shape-tailwindcss-icon-svgrepo-com.svg"
+                                    class="absolute opacity w-20 -top-3 -right-7 transform rotate-15 ">
                         </div>
 
                         <!---------------------------------------ส่วน icon----------------------------------------->
                         <div>
-                              <ul class="home-social">
+                              <ul class="flex justify-center gap-x-[1.25rem]">
                                     <a href="https://web.facebook.com/kasiditnunkingg/" target="_blank"
-                                          class="home-social-link">
+                                          class="text-[2rem] transition-colors duration-300 hover:text-blue-500">
                                           <i class="ri-facebook-circle-fill"></i>
                                     </a>
 
-                                    <a href="https://www.instagram.com/" target="_blank" class="home-social-link">
+                                    <a href="https://www.instagram.com/" target="_blank"
+                                          class="text-[2rem] transition-colors duration-300 hover:text-blue-500">
                                           <i class="ri-instagram-fill"></i>
                                     </a>
-                                    <a href="https://github.com/kasidit1k" target="_blank" class="home-social-link">
+                                    <a href="https://github.com/kasidit1k" target="_blank"
+                                          class="text-[2rem] transition-colors duration-300 hover:text-blue-500">
                                           <i class="ri-github-fill"></i>
                                     </a>
                               </ul>
                         </div>
                         <!-------------------------------------- info 1 -------------------------------------->
-                        <div class="home-info">
+                        <div class="grid">
                               <div>
                                     <h3 class="home-info-title">
                                           HOBBIES
@@ -216,7 +230,7 @@
 
                                     <div class="skills-data">
                                           <div class="skills-blob">
-                                                <img src="img/javascript-1.svg" alt="">
+                                                <img src="img/shape-javascript-svgrepo-com.svg" alt="">
                                           </div>
                                           <h3 class="skills-name">Javascript</h3>
                                           <span class="skills-subtitle">Basic level</span>

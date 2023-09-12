@@ -2,7 +2,7 @@
 
 
 /* --------------------------------------- ตัวแปร ------------------------------------------------- */
-:root {
+:root { /* varible */
       --header-height: 3.5rem;
 
 /* --------------------------------------- กำหนดสี ------------------------------------------------- */
@@ -241,7 +241,7 @@ img{
 
 .home-title {
       text-align: center;
-      font-size: var(--biggest-font-size);
+      font-size: var(--biggest-font-size);  /* 1.5 rem */
       letter-spacing: .3px;
       margin-bottom: .5rem;
 }
@@ -280,11 +280,6 @@ img{
       opacity: .1;
 }
 
-.home-shape-wawes {
-      width: 50px;
-      left: -1.5rem;
-      top: 5rem;
-}
 .home-shape-circle {
       width: 150px;
       bottom: -2rem;
